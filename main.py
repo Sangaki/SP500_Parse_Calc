@@ -27,7 +27,7 @@ date_generated = [start + datetime.timedelta(days=x) for x in range(0, (end-star
 
 rez = []
 for i in range(len(date_generated)):
-    rez.append([datetime.datetime.strftime(date_generated[i], "%Y-%m-%d"), 0])
+    rez.append([date_generated[i], 0])
 
 print(rez)
 
@@ -68,4 +68,24 @@ for i in range(0, len(rez)):                                                    
 
 print(rez)
 
+curr_year = start.year
+curr_month = start.month
+start_dt = curr_month + curr_year * 12
+end_dt = rez[len(rez)-1][0].month + rez[len(rez)-1][0].year * 12
 
+new_rez = []
+void_mas = []
+
+for i in range(start_dt, end_dt, 2):                                                                                    #TODO добавляется только 1 интервал январь-февраль 2006, надо пофиксить
+    temp = []
+    curr_month = i % 12
+    curr_year = i // 12
+    for j in range(((curr_month + curr_year * 12) - start_dt), ((curr_month + curr_year * 12) - start_dt + 62)):
+        if (rez[j][0].month == curr_month or rez[j][0].month == curr_month + 1) and rez[j][0].year == curr_year:        #TODO возможно ошибка где-то в логике этого условия
+            temp.append(rez[j])
+        elif temp != void_mas:
+            new_rez.append(temp)
+        else:
+            i += 2
+
+print(new_rez)                                                                                                          #  итоговый массив формата [интервал][дата][значение]
