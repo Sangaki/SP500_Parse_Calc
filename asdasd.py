@@ -13,8 +13,8 @@ def my_function(otrezok):
     print(out)
 
 
-start = datetime.datetime.strptime("2006-1-1", "%Y-%m-%d")  # здесь мы генерим массив дат
-end = datetime.datetime.strptime("2016-1-1", "%Y-%m-%d")  # формат во второй переменной ГГГГ-ММ-ДД
+start = datetime.datetime.strptime("2006-1-1", "%Y-%m-%d")
+end = datetime.datetime.strptime("2016-1-1", "%Y-%m-%d")
 
 df = datas.get_data()
 

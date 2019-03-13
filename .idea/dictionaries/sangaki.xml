@@ -1,3 +1,8 @@
 <component name="ProjectDictionaryState">
-  <dictionary name="sangaki" />
+  <dictionary name="sangaki">
+    <words>
+      <w>datemax</w>
+      <w>datemin</w>
+    </words>
+  </dictionary>
 </component>
