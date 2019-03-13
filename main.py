@@ -68,5 +68,4 @@ for i in range(0, len(rez)):                                                    
 
 print(rez)
 
-# хуй извините
 
