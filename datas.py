@@ -38,8 +38,6 @@ def filling_empty_days(results, start, end):
                 rez[j][1] = results[i][1]
                 break
     prev_non_zero = 0
-    next_non_zero = 0
-    middle_value = 0
 
     if rez[0][1] == 0:
         for i in range(0, len(rez)):  # Заполняем первые нули первым ненулевым значением
@@ -51,6 +49,8 @@ def filling_empty_days(results, start, end):
 
     not_zero = True
     j = -1
+    next_non_zero = 0
+    middle_value = 0
     for i in range(0, len(rez)):  # Проходим по циклу, ищем нули, заполняем их средним
         if (rez[i][1] == 0) and not_zero:
             prev_non_zero = float(rez[i - 1][1])
