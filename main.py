@@ -17,4 +17,3 @@ new_rez = datas.sequence(rez, start)
 print(new_rez[0][0][1])                                                                                                          #  итоговый массив формата [интервал][дата][значение]
 
 graphs.plot(new_rez[0])
-
