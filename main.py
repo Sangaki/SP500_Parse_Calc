@@ -33,7 +33,8 @@ summ_i = 0
 square_temp = 0
 print(new_rez[0])
 qwe = 0
-for i in range(0, 60):
+for i in range(len(new_rez)):
+    print(len(new_rez[qwe]), qwe)
     leng = len(new_rez[qwe]) - 1
     for j in range(0, leng):
         summ_i += new_rez[i][j][1]
