@@ -67,4 +67,3 @@ for i in range(0, len(rez)):                                                    
         not_zero = True
 
 print(rez)
-
