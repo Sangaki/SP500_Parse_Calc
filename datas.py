@@ -49,8 +49,7 @@ def filling_empty_days(results, start, end):
 
     not_zero = True
     j = -1
-    next_non_zero = 0
-    middle_value = 0
+
     for i in range(0, len(rez)):  # Проходим по циклу, ищем нули, заполняем их средним
         if (rez[i][1] == 0) and not_zero:
             prev_non_zero = float(rez[i - 1][1])
@@ -80,8 +79,6 @@ def sequence(rez, start):
         temp = []
         curr_month = i % 12
         curr_year = i // 12
-
-        curr_dt = (curr_month + curr_year * 12) - start_dt
 
         for j in range(len(rez)):
             if (rez[j][0].month == curr_month or rez[j][0].month == curr_month + 1) and rez[j][0].year == curr_year:
