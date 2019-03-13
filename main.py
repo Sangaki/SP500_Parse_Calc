@@ -13,6 +13,4 @@ rez = datas.filling_empty_days(results, start, end)
 print(rez)
 
 new_rez = datas.sequence(rez, start)
-print(new_rez[0][0][1])                                                                                                          #  итоговый массив формата [интервал][дата][значение]
-
-
+print(new_rez)                                                                                                          #  итоговый массив формата [интервал][дата][значение]
