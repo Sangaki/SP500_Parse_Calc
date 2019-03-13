@@ -64,6 +64,12 @@ def filling_empty_days(results, start, end):
     return rez
 
 
+def floating_mass(rez):
+    for i in range(len(rez)):
+        rez[i][1] = float(rez[i][1])
+    return rez
+
+
 def sequence(rez, start):
     curr_year = start.year
     curr_month = start.month

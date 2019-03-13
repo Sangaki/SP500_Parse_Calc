@@ -4,15 +4,16 @@ import datetime
 import graphs
 
 
-def diff_timeline(otrezok):
+def diff_timeline(otrezok, start, rez):
     x = otrezok
     out = x
     print('lulkappa', type(otrezok[len(otrezok)-1][1]))
     for i in range(0, len(otrezok)-1):
-        x[i][1] = math.fabs(math.log(float(otrezok[i+1][1])) - math.log(float(otrezok[i][1])))
-    x[len(otrezok)][1] = math.fabs(math.log(float(datas.sequence(rez, start)[1][0][1])) -
-                                   math.log(float(otrezok[len(otrezok)-1][1])))
-    print(x[len(x)])
+        x[i][1] = math.fabs(math.log(otrezok[i+1][1]) - math.log(otrezok[i][1]))
+    temp = otrezok[-1][1]
+    print(temp, type(temp))
+    x[-1][1] = math.fabs(math.log(datas.sequence(rez, start)[1][0][1]) - math.log(temp))
+    print(x[-1])
     sum_of_x = 0
     for i in range(0, len(x)):
         sum_of_x += float(x[i][1])
@@ -25,17 +26,17 @@ def diff_timeline(otrezok):
     return out
 
 
-start = datetime.datetime.strptime("2006-1-1", "%Y-%m-%d")
-end = datetime.datetime.strptime("2016-1-1", "%Y-%m-%d")
-
-df = datas.get_data()
-
-results = datas.data_to_cvs(df)
-# print(results)
-
-rez = datas.filling_empty_days(results, start, end)
-# print(rez)
-otrez = datas.sequence(rez, start)[0]
-out = diff_timeline(otrez)
-
-graphs.plot(out)
+# start = datetime.datetime.strptime("2006-1-1", "%Y-%m-%d")
+# end = datetime.datetime.strptime("2016-1-1", "%Y-%m-%d")
+#
+# df = datas.get_data()
+#
+# results = datas.data_to_cvs(df)
+# # print(results)
+#
+# rez = datas.filling_empty_days(results, start, end)
+# # print(rez)
+# otrez = datas.sequence(rez, start)[0]
+# out = diff_timeline(otrez)
+#
+# graphs.plot(out)
