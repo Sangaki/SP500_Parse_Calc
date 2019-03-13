@@ -74,19 +74,19 @@ def sequence(rez, start):
     end_dt = rez[len(rez) - 1][0].month + rez[len(rez) - 1][0].year * 12
 
     new_rez = []
+    voidamas = []
 
-    for i in range(start_dt, end_dt, 2):                                                                                # TODO добавляется только 1 интервал январь-февраль 2006, надо пофиксить
+    for i in range(start_dt, end_dt, 2):                                                                                
         temp = []
         curr_month = i % 12
         curr_year = i // 12
 
         curr_dt = (curr_month + curr_year * 12) - start_dt
-        print(curr_month, curr_year, curr_dt)
 
-        for j in range(curr_dt, curr_dt + 62):
-            if (rez[j][0].month == curr_month or rez[j][0].month == curr_month + 1) and rez[j][0].year == curr_year:    # TODO возможно ошибка где-то в логике этого условия
+        for j in range(len(rez)):
+            if (rez[j][0].month == curr_month or rez[j][0].month == curr_month + 1) and rez[j][0].year == curr_year:
                 temp.append(rez[j])
-            else:
+            elif temp != voidamas:
                 new_rez.append(temp)
                 break
 
