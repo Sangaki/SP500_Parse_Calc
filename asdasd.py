@@ -7,7 +7,7 @@ import graphs
 def diff_timeline(otrezok):
     x = otrezok
     out = x
-    print('lulkappa', otrezok[len(otrezok)-1][1])
+    print('lulkappa', type(otrezok[len(otrezok)-1][1]))
     for i in range(0, len(otrezok)-1):
         x[i][1] = math.fabs(math.log(float(otrezok[i+1][1])) - math.log(float(otrezok[i][1])))
     x[len(otrezok)][1] = math.fabs(math.log(float(datas.sequence(rez, start)[1][0][1])) -
