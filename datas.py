@@ -76,7 +76,7 @@ def sequence(rez, start):
     new_rez = []
     voidamas = []
 
-    for i in range(start_dt, end_dt, 2):                                                                                
+    for i in range(start_dt, end_dt, 2):
         temp = []
         curr_month = i % 12
         curr_year = i // 12
