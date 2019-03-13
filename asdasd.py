@@ -4,7 +4,7 @@ import datetime
 import graphs
 
 
-def my_function(otrezok):
+def diff_timeline(otrezok):
     x = otrezok
     out = x
     for i in range(0, len(otrezok)-1):
@@ -30,6 +30,6 @@ results = datas.data_to_cvs(df)
 rez = datas.filling_empty_days(results, start, end)
 # print(rez)
 otrez = datas.sequence(rez, start)[0]
-out = my_function(otrez)
+out = diff_timeline(otrez)
 
 graphs.plot(out)
