@@ -3,7 +3,7 @@ import datas
 import datetime
 
 
-def my_function(otrezok):
+def diff_timeline(otrezok):
     x = otrez
     out = x
     for i in range(0, len(otrezok)-1):
@@ -13,7 +13,6 @@ def my_function(otrezok):
         sum_of_x += float(x[i][1])
     for i in range(0, len(x)):
         out[i][1] = float(x[i][1]) / sum_of_x
-    print('its out)')
     print(out)
 
 
@@ -23,10 +22,8 @@ end = datetime.datetime.strptime("2016-1-1", "%Y-%m-%d")
 df = datas.get_data()
 
 results = datas.data_to_cvs(df)
-# print(results)
 
 rez = datas.filling_empty_days(results, start, end)
-# print(rez)
 otrez = datas.sequence(rez, start)[0]
 my_function(otrez)
 
