@@ -32,15 +32,16 @@ print('summ=', summ)
 summ_i = 0
 square_temp = 0
 z = []
-qwe = 0
 for each in range(len(new_rez)):
-    for j in range(len(new_rez[qwe])):
-        summ_i += new_rez[qwe][j][1]
-    summ_i /= len(new_rez[qwe])
+    for j in range(len(new_rez[each])):
+        summ_i += new_rez[each][j][1]
+    summ_i /= len(new_rez[each])
     square_temp += math.pow((summ_i - summ), 2)  # скобочка с квадратом в сумме хуйня ебаная блять я запутался
-    z.append(summ - summ_i)
+    if each != 0:
+        z.append((summ - summ_i) + z[each-1])
+    else:
+        z.append(summ - summ_i)
     summ_i = 0
-    qwe += 1
 
 print('huynya = ', square_temp)
 print('z = ', z)
