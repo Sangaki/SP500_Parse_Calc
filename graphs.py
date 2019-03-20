@@ -37,7 +37,6 @@ def plot(data):
     ax.format_ydata = fatah
 
     ax.grid(True)
-    # TODO форматирование xdata для корректного отображения grid'a и нормального внешнего вида
 
     fig.autofmt_xdate()
 
