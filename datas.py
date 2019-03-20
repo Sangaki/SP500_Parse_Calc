@@ -33,15 +33,15 @@ def filling_empty_days(results, start, end):
         rez.append([date_generated[i], 0])
 
     for i in range(1, len(results)):
-        for j in range(i, len(date_generated)):  # нужно подождать секунд 15-20(слишком много жрет циклов)
+        for j in range(i, len(date_generated)):
             if datetime.datetime.strptime(results[i][0], "%Y-%m-%d") == date_generated[j]:
                 rez[j][1] = results[i][1]
                 break
     prev_non_zero = 0
 
     if rez[0][1] == 0:
-        for i in range(0, len(rez)):  # Заполняем первые нули первым ненулевым значением
-            if rez[i][1] != 0:  # Также проверяем, равно ли первое значение нулю
+        for i in range(0, len(rez)):
+            if rez[i][1] != 0:
                 next_non_zero = rez[i][1]
                 for j in range(0, i):
                     rez[j][1] = next_non_zero
