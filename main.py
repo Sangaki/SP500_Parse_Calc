@@ -4,8 +4,8 @@ import asdasd
 import datetime
 import math
 
-start = datetime.datetime.strptime("2006-1-1", "%Y-%m-%d")  # здесь мы генерим массив дат
-end = datetime.datetime.strptime("2016-1-1", "%Y-%m-%d")  # формат во второй переменной ГГГГ-ММ-ДД
+start = datetime.datetime.strptime("2006-1-1", "%Y-%m-%d") 
+end = datetime.datetime.strptime("2016-1-1", "%Y-%m-%d")
 
 df = datas.get_data()
 
@@ -29,7 +29,7 @@ for each in range(len(new_rez)):
     for j in range(len(new_rez[each])):
         summ_i += new_rez[each][j][1]
     summ_i /= len(new_rez[each])
-    square_temp += math.pow((summ_i - summ), 2)  # скобочка с квадратом в сумме хуйня ебаная блять я запутался
+    square_temp += math.pow((summ_i - summ), 2)
     if each != 0:
         z.append((summ - summ_i) + z[each-1])
     else:
@@ -37,7 +37,7 @@ for each in range(len(new_rez)):
     summ_i = 0
 
 s = math.sqrt(square_temp/len(new_rez))
-alpha = 1.5708  # по той формуле можно альфу на 0.5 поменять и тогда h=0.4011
+alpha = 1.5708 
 r = max(z) - min(z)
 h = math.log(r/s)/math.log(alpha*len(new_rez))
 print('R = ', r)
